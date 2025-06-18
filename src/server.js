@@ -3,9 +3,11 @@ import { ENV } from "./config/env.js";
 import { connectDB } from "./config/db.js";
 import favRoutes from "./routes/favRoute.js";
 import userRoutes from "./routes/userRoutes.js";
+import job from "./config/cron.js";
 
 const app = express();
 const PORT = ENV.PORT || 5001;
+if (ENV.MODE_ENV === "production") job.start();
 
 app.use(express.json());
 
