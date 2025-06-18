@@ -1,6 +1,6 @@
 import cron from "cron";
 import https from "https";
-import { ENV } from "./env";
+import { ENV } from "./env.js";
 
 const job = new cron.CronJob("*/14 * * * *", function () {
   https
